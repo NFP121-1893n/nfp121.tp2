@@ -1,11 +1,11 @@
 package question2;
-
+import java.util.Scanner;
 
 /**
  * Décrivez votre classe FahrenheitCelsius ici.
- * 
- * @author (votre nom) 
- * @version (un numéro de version ou une date)
+ * Cette Classe est un simple converteur de fahrenheit en celsius
+ * @author (Jose Gebrael) 
+ * @version (13-1-2022)
  */
 public class FahrenheitCelsius{
 
@@ -15,9 +15,13 @@ public class FahrenheitCelsius{
       *  @param args ...
       */
      public static void main(String[] args){
+         Scanner in = new Scanner(System.in);
+         String fahrenheit = in.nextLine();
+         int x = 0;
        try{
-       
-      
+           x = Integer.parseInt(fahrenheit);
+           float celsius = Math.round(fahrenheitEnCelsius(x) * 1000.0F) / 1000.0F;
+           System.out.println(fahrenheit + "\u00B0F -> " + celsius + "\u00B0C");
        }catch(NumberFormatException nfe){
            System.out.println("error : " + nfe.getMessage());  // en cas d'erreur 
        }
@@ -31,7 +35,7 @@ public class FahrenheitCelsius{
       */
      public static float fahrenheitEnCelsius( int f){
        // ...
-       return 0.F;	// à compléter	en remplaçant la valeur retournée par la fonction de conversion
+       return (float)(double)((f-32.0)*(5.0/9.0));    // à compléter    en remplaçant la valeur retournée par la fonction de conversion
        // ...
      }
 
